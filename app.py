@@ -70,4 +70,8 @@ def delete():
         return render_template('delete.html',message= message, msg_type = msg_type)
 
     return render_template('delete.html')
-app.run(debug = True,port=5003)
+import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
